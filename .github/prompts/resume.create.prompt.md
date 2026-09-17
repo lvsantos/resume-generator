@@ -62,12 +62,14 @@ Garanta que as perguntas cubram, no mínimo:
 - Competências comportamentais exigidas (liderança, comunicação, colaboração)
 - Idiomas, disponibilidade, localização/fuso, modelo de trabalho (remoto/híbrido/presencial)
 - Certificações e diferenciais relevantes
+- Links oficiais de certificações e como validá-los antes de incluir no currículo
 - Gaps críticos e estratégia de mitigação (como posicionar sem inventar experiência)
 
 4. **Atualizar contexto persistente antes da geração final**
 
 - Sempre que surgirem novos fatos confirmados sobre trabalho, impacto, stack, senioridade, certificações ou qualificações técnicas, atualizar `#file:CONTEXT.md`
 - Executar essa atualização usando a skill `#file:grill-with-docs`, mantendo consistência com as seções e o estilo do arquivo
+- Registrar também os links oficiais de cada certificação confirmada, quando disponíveis, para uso posterior no currículo
 - Não sobrescrever fatos anteriores sem evidência; apenas complementar, refinar ou corrigir quando houver confirmação explícita do usuário
 
 5. **Gerar currículo final após clarificação**
@@ -84,6 +86,7 @@ Garanta que as perguntas cubram, no mínimo:
 
 - Não inventar experiências, projetos, resultados ou certificações
 - Não afirmar proficiência que o usuário não confirmou
+- Sempre que incluir uma certificação no currículo, incluir também o link oficial da credencial ou da página de verificação do emissor; se o link não estiver disponível, solicitar ao usuário antes de gerar a versão final
 - Se faltar informação relevante, perguntar antes de gerar a versão final
 - Se novas informações relevantes forem confirmadas durante a conversa, refleti-las em `#file:CONTEXT.md` antes de gerar a versão final
 - Em caso de gap, reposicionar com honestidade usando competências transferíveis
