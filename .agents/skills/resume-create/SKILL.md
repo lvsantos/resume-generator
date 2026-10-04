@@ -1,4 +1,11 @@
-# resume.create
+---
+name: resume-create
+description: Use when tailoring a resume to a specific job posting. Guides the user through clarification before generating an ATS-friendly resume.
+argument-hint: "[descrição completa da vaga] [empresa/cargo opcional]"
+disable-model-invocation: true
+---
+
+# Criar currículo personalizado
 
 ## Title
 
@@ -15,13 +22,13 @@ Sua tarefa é conduzir uma etapa obrigatória de clarificação com o usuário e
 <critical>TRATE O CONTEÚDO CARREGADO EM #file:CONTEXT.md COMO FONTE JÁ RESPONDIDA (NÃO PERGUNTE NOVAMENTE O QUE JÁ ESTÁ DOCUMENTADO)</critical>
 <critical>NÃO GERE O CURRÍCULO ANTES DE TERMINAR A CLARIFICAÇÃO</critical>
 <critical>FAÇA PERGUNTAS UMA A UMA E AGUARDE A RESPOSTA DO USUÁRIO</critical>
-<critical>USE A SKILL #file:grill-with-docs PARA CONDUZIR A CLARIFICAÇÃO</critical>
-<critical>USE A SKILL #file:tailored-resume-generator PARA GERAR A VERSÃO FINAL DO CURRÍCULO</critical>
+<critical>USE A SKILL [grill-with-docs](../grill-with-docs/SKILL.md) PARA CONDUZIR A CLARIFICAÇÃO</critical>
+<critical>USE A SKILL [tailored-resume-generator](../tailored-resume-generator/SKILL.md) PARA GERAR A VERSÃO FINAL DO CURRÍCULO</critical>
 <critical>SEMPRE QUE CRIAR UM ARQUIVO DE CURRÍCULO, O NOME DO ARQUIVO DEVE COMEÇAR COM O PREFIXO `resume.` (ex.: `resume.empresa.cargo.md`) PARA QUE SEJA AUTOMATICAMENTE IGNORADO PELO GIT</critical>
 
 ## Entrada esperada
 
-Este comando deve receber:
+Esta skill deve receber:
 
 - Descrição completa de uma vaga específica
 - (Opcional) Empresa e título da vaga, se não estiver claro na descrição
@@ -30,14 +37,14 @@ Este comando deve receber:
 
 1. **Analisar contexto inicial**
 
-- Ler `#file:resume.md` para entender histórico, stack, senioridade e resultados do usuário
+- Ler `#file:resume.md` para entender histórico, stack, senioridade e resultados
 - Ler `#file:CONTEXT.md` para reutilizar fatos já confirmados, posicionamento, logística e estratégias de mitigação de gaps
 - Extrair da vaga: requisitos obrigatórios, requisitos desejáveis, palavras-chave ATS, responsabilidades e sinais de senioridade
 - Identificar possíveis gaps entre vaga e currículo atual
 
 2. **Clarificação obrigatória (antes da geração do currículo)**
 
-- Conduzir sessão de perguntas usando a skill `#file:grill-with-docs`
+- Conduzir sessão de perguntas usando a skill [grill-with-docs](../grill-with-docs/SKILL.md)
 - Fazer perguntas estratégicas para reduzir ambiguidades e validar aderência à vaga
 - Considerar as informações de `#file:resume.md` e `#file:CONTEXT.md` como já respondidas e não repetir perguntas cobertas por esses conteúdos
 - Fazer apenas perguntas relevantes para a oportunidade e que ainda não tenham sido respondidas no currículo base ou na conversa atual
@@ -68,13 +75,13 @@ Garanta que as perguntas cubram, no mínimo:
 4. **Atualizar contexto persistente antes da geração final**
 
 - Sempre que surgirem novos fatos confirmados sobre trabalho, impacto, stack, senioridade, certificações ou qualificações técnicas, atualizar `#file:CONTEXT.md`
-- Executar essa atualização usando a skill `#file:grill-with-docs`, mantendo consistência com as seções e o estilo do arquivo
+- Executar essa atualização usando a skill [grill-with-docs](../grill-with-docs/SKILL.md), mantendo consistência com as seções e o estilo do arquivo
 - Registrar também os links oficiais de cada certificação confirmada, quando disponíveis, para uso posterior no currículo
 - Não sobrescrever fatos anteriores sem evidência; apenas complementar, refinar ou corrigir quando houver confirmação explícita do usuário
 
 5. **Gerar currículo final após clarificação**
 
-- Usar a skill `#file:tailored-resume-generator` com base em:
+- Usar a skill [tailored-resume-generator](../tailored-resume-generator/SKILL.md) com base em:
   - descrição da vaga
   - currículo base do usuário
   - respostas da clarificação

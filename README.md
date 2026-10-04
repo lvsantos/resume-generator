@@ -1,14 +1,14 @@
 # resume-generator
 
-A Copilot-powered workflow for generating tailored, ATS-friendly resumes for specific job postings, using VS Code custom prompts and agent skills.
+A Copilot-powered workflow for generating tailored, ATS-friendly resumes for specific job postings, using VS Code agent skills.
 
 ## What this is
 
-This repo contains the **tooling** for tailoring resumes — prompts and skills — not anyone's personal resume data. Personal files (your base resume, profile context, generated resume drafts) are kept locally and excluded from version control by convention.
+This repo contains the **tooling** for tailoring resumes — agent skills — not anyone's personal resume data. Personal files (your base resume, profile context, generated resume drafts) are kept locally and excluded from version control by convention.
 
 ## How it works
 
-- [`.github/prompts/resume.create.prompt.md`](.github/prompts/resume.create.prompt.md) — the `/resume.create` custom prompt. Given a job description, it reads your base resume and confirmed profile facts, runs a guided clarification Q&A to fill gaps, then generates a final tailored resume.
+- [`.agents/skills/resume-create`](.agents/skills/resume-create) — the `/resume-create` skill. Given a job description, it reads your base resume and confirmed profile facts, runs a guided clarification Q&A to fill gaps, then generates a final tailored resume.
 - [`.agents/skills/grill-with-docs`](.agents/skills/grill-with-docs) — drives the clarification/interview step and keeps `CONTEXT.md` in sync with confirmed facts.
 - [`.agents/skills/tailored-resume-generator`](.agents/skills/tailored-resume-generator) — generates the final tailored resume from the job description, base resume, and clarification answers.
 - [`.agents/skills/documentation-writer`](.agents/skills/documentation-writer) — general-purpose documentation skill used when writing/updating docs in this repo.
@@ -24,7 +24,7 @@ This repo contains the **tooling** for tailoring resumes — prompts and skills 
 
 ## Usage
 
-1. In VS Code Copilot Chat, run the `/resume.create` prompt.
+1. In VS Code Copilot Chat, run the `/resume-create` skill.
 2. Paste the full job description (and company/title if not obvious from it).
 3. Answer the one-at-a-time clarification questions the assistant asks.
 4. Receive the tailored resume plus a fit summary and follow-up suggestions.
